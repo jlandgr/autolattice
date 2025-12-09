@@ -6,10 +6,10 @@ This repository allows you to design your own lattice models with your desired t
 [Artificial discovery of lattice models for wave transport](https://arxiv.org/abs/2508.10693) \
 *Jonas Landgraf, Clara Wanjura, Vittorio Peano, and Florian Marquardt* (2025) 
 
-## Overview over the repository:
-TODO
-
 AutoLattice builds on our previous work [AutoScatter](https://github.com/jlandgr/autoscatter), which automatically designs few-mode coupled-mode systems with desired scattering properties. Please check out the corresponding [GitHub repository](https://github.com/jlandgr/autoscatter) and [PRX article](https://link.aps.org/doi/10.1103/PhysRevX.15.021038).
+
+## Overview over this repository:
+TODO
 
 ## Installation
 We recommend creating a new environment with venv or conda. The package can be installed using:
