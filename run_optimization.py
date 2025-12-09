@@ -34,7 +34,11 @@ with open(setup_file) as f:
     exec(code)
 
 # create results folder
-os.makedirs(save_folder)
+os.makedirs(save_folder, exist_ok=True)
+# copy the setup file to the corresponding save folder
+if procid == 0:
+    os.system("cp %s %s"%(setup_file, os.path.join(save_folder, 'setup.py')))  
+
 
 optimizer.prepare_all_possible_combinations()
 
@@ -49,7 +53,7 @@ for graph_to_test in my_set_to_test:
     success, infos, _ = optimizer.repeated_optimization(graph_characteriser=graph_to_test)
     solution_arrays.append(infos[-1]['solution'])
     successes.append(success)
-    print('tested graph:', graph_to_test, 'success:', success, len(infos))
+    print('tested graph:', graph_to_test, 'success:', success)
 
 to_save = {
     'graphs_tested': my_set_to_test,

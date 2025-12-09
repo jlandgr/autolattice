@@ -1469,8 +1469,6 @@ class Architecture_Optimizer():
         return potential_combinations
     
     def cleanup_valid_combinations(self):
-        raise NotImplementedError("use instead the function find_irreducible_graphs")
-    
         all_unique_valid_combinations_array = np.unique(np.asarray(self.valid_combinations), axis=0)
         cleaned_valid_combinations = []
         num_valid_combinations = all_unique_valid_combinations_array.shape[0]
@@ -1523,15 +1521,3 @@ class Architecture_Optimizer():
 
         return transfer_matrix, infos
     
-def find_irreducible_lattices(all_valid_lattices):
-    all_unique_lattices = np.unique(np.asarray(valid_combinations), axis=0)
-    irreducible_valid_lattices = []
-    num_valid_combinations = all_unique_lattices.shape[0]
-
-    for combo_idx, valid_combo in tqdm(enumerate(all_unique_lattices)):
-        idxs_combis_to_compare_against = np.setdiff1d(np.arange(num_valid_combinations),combo_idx)
-        #check if any other of the valid architecture is a subgraph of the current architecture 
-        if not arch.check_if_subgraph_upper_triangle(valid_combo, all_unique_lattices[idxs_combis_to_compare_against]):
-            irreducible_valid_lattices.append(valid_combo)
-    
-    return irreducible_valid_lattices
