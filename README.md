@@ -17,6 +17,8 @@ We recommend creating a new environment with venv or conda. The package can be i
 pip install git+https://github.com/jlandgr/autolattice.git
 ```
 
+Please be aware that the code runs only on the CPU, as Jax does not support computing non-Hermitian eigenspectra on a GPU.
+
 ## Cite us
 
 Are you using AutoLattice in your project or research, or do some related research? Then, please cite us!
