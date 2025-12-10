@@ -8,5 +8,3 @@ IPython
 pyswarms
 networkx
 ipywidgets
-torch = 1.4
-aifeynman
