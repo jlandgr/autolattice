@@ -34,7 +34,7 @@ setup(
     long_description=open('README.md').read() if exists('README.md') else '',
     long_description_content_type="text/markdown",
     install_requires=[
-        'numpy', 'scipy', 'matplotlib', 'jax', 'sympy', 'tqdm', 'IPython', 'pyswarms', 'networkx', 'ipywidgets', 'torch=1.4', 'aifeynman'
+        'numpy', 'scipy', 'matplotlib', 'jax', 'sympy', 'tqdm', 'IPython', 'pyswarms', 'networkx', 'ipywidgets', 'torch==1.4', 'aifeynman'
     ],
     python_requires=">=3.10",
     classifiers=['Operating System :: OS Independent',
