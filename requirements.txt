@@ -6,3 +6,5 @@ sympy
 tqdm
 IPython
 pyswarms
+networkx
+ipywidgets

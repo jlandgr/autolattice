@@ -3,7 +3,7 @@ This python script generates a large dataset of parameter sets that realize the 
 The lattice structure is fixed to the lattice shown in Fig. 3(b).
 We vary the amplification rate per unit cell (target_scaling_rate) and the script finds suitable coupling rates to achieve this amplification rate.
 The corresponding parameters are saved and later merged into one file by dataset_merge.ipynb.
-This dataset is used by AIFeynman to find parameter dependencies between the transport properties and the coupling parameters, see symbolic_regression.py.
+This dataset is used by AIFeynman to find parameter dependencies between the transport properties and the coupling parameters.
 
 We recommend to run this script on a cluster to parallelize the dataset generation.
 We assume in the following that the cluster uses Slurm as job scheduler.
@@ -21,6 +21,8 @@ import autolattice.architecture_optimizer as arch_opt
 import copy
 
 # the environment variable SLURM_PROCID tells the script which is its current task number.
+# if you want to run this script locally on your computer, you can set SLURM_PROCID to 0 by executing the following command in the UNIX command line:
+# export SLURM_PROCID=0
 procid = int(os.environ['SLURM_PROCID'])
 
 num_runs = 10000
