@@ -8,3 +8,4 @@ IPython
 pyswarms
 networkx
 ipywidgets
+aifeynman
